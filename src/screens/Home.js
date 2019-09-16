@@ -296,7 +296,7 @@ class Home extends Component {
         <View style={styles.container}>
           <Text
             style={{fontSize: 24, fontWeight: '700', paddingHorizontal: 20}}>
-            Are You Interested in latest items, Varun?
+            Latest Collections
           </Text>
           <View
             style={{
@@ -330,7 +330,7 @@ class Home extends Component {
                     />
                   </View>
                   <View style={{flex: 1, paddingLeft: 10, paddingTop: 10}}>
-                    <Text>{one.title}</Text>
+                    <Text style={{textAlign: 'center'}}>{one.title}</Text>
                   </View>
                 </View>
               ))}

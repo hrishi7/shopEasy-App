@@ -148,6 +148,28 @@ class Cart extends Component {
               Update
             </Text>
           </TouchableOpacity>
+          <TouchableOpacity
+            style={{
+              flexGrow: 1,
+              alignItems: 'center',
+              justifyContent: 'center',
+              backgroundColor: '#091B37',
+              width: 90,
+              height: 45,
+              alignSelf: 'center',
+              marginVertical: 15,
+              borderRadius: 25,
+            }}>
+            <Text
+              style={{
+                textAlign: 'center',
+                fontSize: 20,
+                fontWeight: 'bold',
+                color: 'white',
+              }}>
+              Logout
+            </Text>
+          </TouchableOpacity>
         </ScrollView>
       </View>
     );

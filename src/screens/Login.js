@@ -57,6 +57,20 @@ class Login extends Component {
             SIGN UP
           </Text>
         </TouchableOpacity>
+        <TouchableOpacity
+          style={styles.signUpBtn}
+          onPress={() => this.props.navigation.navigate('Home')}>
+          <Text
+            style={{
+              marginTop: 25,
+              fontSize: 15,
+              textAlign: 'center',
+              fontWeight: 'bold',
+              color: '#091B37',
+            }}>
+            SKIP TO MAIN
+          </Text>
+        </TouchableOpacity>
       </View>
     );
   }
@@ -96,6 +110,7 @@ const styles = StyleSheet.create({
     width: '60%',
     height: 70,
     borderRadius: 35,
+    marginBottom: 15,
     alignSelf: 'center',
     justifyContent: 'center',
     shadowOffset: {width: 10, height: 10},

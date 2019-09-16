@@ -76,6 +76,20 @@ class Register extends Component {
           </Text>
         </TouchableOpacity>
         <TouchableOpacity
+          style={styles.signUpBtn}
+          onPress={() => this.props.navigation.navigate('Home')}>
+          <Text
+            style={{
+              fontSize: 15,
+              marginTop: 10,
+              textAlign: 'center',
+              fontWeight: 'bold',
+              color: '#091B37',
+            }}>
+            SKIP TO MAIN
+          </Text>
+        </TouchableOpacity>
+        <TouchableOpacity
           style={styles.termsAndConditions}
           onPress={() => this.setState({isVisible: true})}>
           <Text

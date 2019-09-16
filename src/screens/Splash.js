@@ -5,7 +5,7 @@ class Splash extends Component {
   constructor() {
     super();
     this.state = {
-      isAuthenticated: true,
+      isAuthenticated: false,
     };
   }
   componentDidMount = () => {
