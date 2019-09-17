@@ -18,6 +18,7 @@ import MyOrders from '../screens/MyOrders';
 import Register from '../screens/Register';
 import Splash from '../screens/Splash';
 import Profile from '../screens/Profile';
+import Product from '../screens/Product';
 // import Icon from 'react-native-vector-icons/AntDesign';
 
 class Navigation extends Component {
@@ -159,6 +160,9 @@ const AppStacknavigator = createStackNavigator({
     navigationOptions: {
       header: null,
     },
+  },
+  Product: {
+    screen: Product,
   },
 });
 const AppContainer = createAppContainer(AppStacknavigator);

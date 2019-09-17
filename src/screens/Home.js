@@ -4,7 +4,7 @@ import {
   Text,
   StyleSheet,
   FlatList,
-  TouchableHighlight,
+  TouchableWithoutFeedback,
   Image,
   ScrollView,
 } from 'react-native';
@@ -22,6 +22,7 @@ class Home extends Component {
           img:
             'https://images.unsplash.com/photo-1491553895911-0055eca6402d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=80',
           price: '159.0',
+          discount: '53%',
         },
         {
           id: '2',
@@ -29,6 +30,7 @@ class Home extends Component {
           img:
             'https://images.unsplash.com/photo-1491553895911-0055eca6402d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=80',
           price: '159.0',
+          discount: '53%',
         },
         {
           id: '3',
@@ -36,6 +38,7 @@ class Home extends Component {
           img:
             'https://images.unsplash.com/photo-1491553895911-0055eca6402d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=80',
           price: '159.0',
+          discount: '53%',
         },
         {
           id: '4',
@@ -43,6 +46,7 @@ class Home extends Component {
           img:
             'https://images.unsplash.com/photo-1491553895911-0055eca6402d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=80',
           price: '159.0',
+          discount: '53%',
         },
       ],
       categories: [
@@ -307,32 +311,44 @@ class Home extends Component {
               horizontal={true}
               showsHorizontalScrollIndicator={false}>
               {this.state.latestProducts.map(one => (
-                <View
-                  key={one.id}
-                  style={{
-                    height: 130,
-                    width: 130,
-                    marginLeft: 2,
-                    borderWidth: 0.5,
-                    borderColor: '#dddddd',
-                  }}>
-                  <View style={{flex: 2}}>
-                    <Image
-                      source={{
-                        uri: `${one.img}`,
-                      }}
+                <TouchableWithoutFeedback
+                  onPress={() => this.props.navigation.navigate('Product')}>
+                  <View
+                    key={one.id}
+                    style={{
+                      height: 130,
+                      width: 130,
+                      marginLeft: 2,
+                      borderWidth: 0.5,
+                      borderColor: '#dddddd',
+                    }}>
+                    <View style={{flex: 2}}>
+                      <Image
+                        source={{
+                          uri: `${one.img}`,
+                        }}
+                        style={{
+                          flex: 1,
+                          width: null,
+                          height: null,
+                          resizeMode: 'cover',
+                        }}
+                      />
+                    </View>
+                    <View
                       style={{
                         flex: 1,
-                        width: null,
-                        height: null,
-                        resizeMode: 'cover',
-                      }}
-                    />
+                        paddingLeft: 10,
+                        paddingTop: 10,
+                        flexDirection: 'column',
+                      }}>
+                      <Text style={{textAlign: 'center'}}>{one.title}</Text>
+                      <Text style={{textAlign: 'center'}}>
+                        {one.discount} off
+                      </Text>
+                    </View>
                   </View>
-                  <View style={{flex: 1, paddingLeft: 10, paddingTop: 10}}>
-                    <Text style={{textAlign: 'center'}}>{one.title}</Text>
-                  </View>
-                </View>
+                </TouchableWithoutFeedback>
               ))}
             </ScrollView>
           </View>
